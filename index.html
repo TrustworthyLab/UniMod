@@ -6,7 +6,7 @@
 
   <!-- Primary Meta Tags -->
   <meta name="title" content="From Sparse Decisions to Dense Reasoning: A Multi-attribute Trajectory Paradigm for Multimodal Moderation">
-  <meta name="description" content="We propose UniMod, a multi-attribute trajectory learning paradigm for multimodal moderation that transitions from sparse binary decisions to dense structured reasoning traces (evidence grounding, modality assessment, risk mapping, policy decision, and response generation). To support dense supervision, we develop a multi-head scalar reward model (MSRM) and optimization strategies that mitigate objective interference in multi-task learning. Experiments show UniMod achieves competitive textual moderation and a new multimodal state-of-the-art using less than 40% of the training data required by leading baselines.">
+  <meta name="description" content="We propose UniMod, a multi-attribute trajectory learning paradigm for multimodal moderation that transitions from sparse binary decisions to dense structured reasoning traces (evidence grounding, modality assessment, risk mapping, policy decision, and response generation). To support dense supervision, we develop a multi-head scalar reward model (UniRM) and optimization strategies that mitigate objective interference in multi-task learning. Experiments show UniMod achieves competitive textual moderation and a new multimodal state-of-the-art using less than 40% of the training data required by leading baselines.">
   <meta name="keywords" content="Multimodal Moderation, AI Safety, Multimodal Safety, VLMs, Reward Modeling, Trajectory Supervision, Multi-objective Optimization, Guard Models">
   <meta name="author" content="Tianle Gu, Kexin Huang, Lingyu Li, Ruilin Luo, Shiyang Huang, Zongqi Wang, Yujiu Yang, Yan Teng, Yingchun Wang">
   <meta name="robots" content="index, follow">
@@ -16,7 +16,7 @@
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Tsinghua University · Shanghai Artificial Intelligence Laboratory · Fudan University">
   <meta property="og:title" content="From Sparse Decisions to Dense Reasoning: A Multi-attribute Trajectory Paradigm for Multimodal Moderation">
-  <meta property="og:description" content="UniMod reformulates multimodal moderation from sparse binary decisions to dense structured reasoning trajectories, supported by a multi-head scalar reward model (MSRM) for attribute-level supervision and optimized multi-task training dynamics.">
+  <meta property="og:description" content="UniMod reformulates multimodal moderation from sparse binary decisions to dense structured reasoning trajectories, supported by a multi-head scalar reward model (UniRM) for attribute-level supervision and optimized multi-task training dynamics.">
   <meta property="og:url" content="https://YOUR_DOMAIN.com/unimod">
   <meta property="og:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
   <meta property="og:image:width" content="1200">
@@ -33,7 +33,7 @@
   <meta name="twitter:site" content="@YOUR_TWITTER_HANDLE">
   <meta name="twitter:creator" content="@AUTHOR_TWITTER_HANDLE">
   <meta name="twitter:title" content="From Sparse Decisions to Dense Reasoning: UniMod for Multimodal Moderation">
-  <meta name="twitter:description" content="UniMod: dense structured reasoning trajectories + MSRM attribute-level rewards for efficient, strong multimodal moderation.">
+  <meta name="twitter:description" content="UniMod: dense structured reasoning trajectories + UniRM attribute-level rewards for efficient, strong multimodal moderation.">
   <meta name="twitter:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
   <meta name="twitter:image:alt" content="From Sparse Decisions to Dense Reasoning — UniMod Project Page">
 
@@ -104,7 +104,7 @@
     "@context": "https://schema.org",
     "@type": "ScholarlyArticle",
     "headline": "From Sparse Decisions to Dense Reasoning: A Multi-attribute Trajectory Paradigm for Multimodal Moderation",
-    "description": "UniMod transitions multimodal moderation from sparse binary decisions to dense structured reasoning trajectories, supported by MSRM attribute-level rewards and optimized multi-task training dynamics.",
+    "description": "UniMod transitions multimodal moderation from sparse binary decisions to dense structured reasoning trajectories, supported by UniRM attribute-level rewards and optimized multi-task training dynamics.",
     "author": [
       {"@type": "Person", "name": "Tianle Gu", "affiliation": [{"@type": "Organization", "name": "Tsinghua University"}, {"@type": "Organization", "name": "Shanghai Artificial Intelligence Laboratory"}]},
       {"@type": "Person", "name": "Kexin Huang", "affiliation": [{"@type": "Organization", "name": "Fudan University"}]},
@@ -121,7 +121,7 @@
     "url": "https://YOUR_DOMAIN.com/unimod",
     "image": "https://YOUR_DOMAIN.com/static/images/social_preview.png",
     "keywords": ["Multimodal Moderation", "AI Safety", "Reward Modeling", "Trajectory Supervision", "Multi-objective Optimization", "VLMs"],
-    "abstract": "We propose UniMod, a multi-attribute trajectory learning paradigm for multimodal moderation that transitions from sparse binary decisions to dense structured reasoning traces (evidence grounding, modality assessment, risk mapping, policy decision, and response generation). To support dense supervision, we develop a multi-head scalar reward model (MSRM) and optimization strategies that mitigate objective interference in multi-task learning. Experiments show UniMod achieves competitive textual moderation and a new multimodal state-of-the-art using less than 40% of the training data required by leading baselines.",
+    "abstract": "We propose UniMod, a multi-attribute trajectory learning paradigm for multimodal moderation that transitions from sparse binary decisions to dense structured reasoning traces (evidence grounding, modality assessment, risk mapping, policy decision, and response generation). To support dense supervision, we develop a multi-head scalar reward model (UniRM) and optimization strategies that mitigate objective interference in multi-task learning. Experiments show UniMod achieves competitive textual moderation and a new multimodal state-of-the-art using less than 40% of the training data required by leading baselines.",
     "isAccessibleForFree": true,
     "license": "https://creativecommons.org/licenses/by/4.0/",
     "mainEntity": {"@type": "WebPage", "@id": "https://YOUR_DOMAIN.com/unimod"},
@@ -342,7 +342,17 @@
             <h2 class="title is-3">Abstract</h2>
             <div class="content has-text-justified">
               <p>
-                Safety moderation is pivotal for identifying harmful content. Despite the success of textual safety moderation, its multimodal counterparts remain hindered by a dual sparsity of data and supervision. Conventional reliance on binary labels lead to shortcut learning, which obscures the intrinsic classification boundaries necessary for effective multimodal discrimination. Hence, we propose a novel learning paradigm (UniMod) that transitions from sparse decision-making to dense reasoning traces. By constructing structured trajectories encompassing evidence grounding, modality assessment, risk mapping, policy decision, and response generation, we reformulate monolithic decision tasks into a multi-dimensional boundary learning process. This approach forces the model to ground its decision in explicit safety semantics, preventing the model from converging on superficial shortcuts. To facilitate this paradigm, we develop a multi-head scalar reward model (MSRM). MSRM provides multi-dimensional supervision by assigning attribute-level scores to the response generation stage. Furthermore, we introduce specialized optimization strategies to decouple task-specific parameters and rebalance training dynamics, effectively resolving interference between diverse objectives in multi-task learning. Empirical results show UniMod achieves competitive textual moderation performance and sets a new multimodal state-of-the-art (SOTA) using less than 40% of the training data used by leading baselines. Ablations further validate our multi-attribute trajectory reasoning, offering an effective and efficient framework for multimodal moderation.
+                Safety moderation is pivotal for identifying harmful content.
+                Despite the success of textual safety moderation, its multimodal counterparts remain hindered by a dual sparsity of data and supervision.
+                Conventional reliance on binary labels lead to shortcut learning, which obscures the intrinsic classification boundaries necessary for effective multimodal discrimination.
+                Hence, we propose a novel learning paradigm (UniMod) that transitions from sparse decision-making to dense reasoning traces.
+                By constructing structured trajectories encompassing evidence grounding, modality assessment, risk mapping, policy decision, and response generation, we reformulate monolithic decision tasks into a multi-dimensional boundary learning process.
+                This approach forces the model to ground its decision in explicit safety semantics, preventing the model from converging on superficial shortcuts.
+                To facilitate this paradigm, we develop a multi-head scalar reward model (UniRM).
+                UniRM provides multi-dimensional supervision by assigning attribute-level scores to the response generation stage.
+                Furthermore, we introduce specialized optimization strategies to decouple task-specific parameters and rebalance training dynamics, effectively resolving interference between diverse objectives in multi-task learning.
+                Empirical results show UniMod achieves competitive textual moderation performance and sets a new multimodal state-of-the-art (SOTA) using less than 40% of the training data used by leading baselines.
+                Ablations further validate our multi-attribute trajectory reasoning, offering an effective and efficient framework for multimodal moderation.              
               </p>
             </div>
           </div>
