@@ -749,5 +749,28 @@ a:focus {
   }
 }
 
+.publication-authors sup {
+  font-size: 0.65em;
+  vertical-align: super;
+  margin-left: 1px;
+}
+
+.publication-affiliations {
+  margin-top: 0.5rem;
+  font-size: 0.95em;
+  line-height: 1.4;
+}
+
+.publication-affiliations sup {
+  font-size: 0.7em;
+  margin-right: 4px;
+}
+
+.publication-affiliations .venue {
+  display: inline-block;
+  margin-top: 0.3rem;
+  font-weight: 500;
+}
+
 
 
