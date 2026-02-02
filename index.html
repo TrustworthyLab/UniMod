@@ -335,19 +335,35 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <!-- TODO: Replace with your teaser video -->
-      <video poster="" id="tree" autoplay controls muted loop height="100%" preload="metadata">
-        <!-- TODO: Add your video file path here -->
-        <source src="static/videos/demo.mp4" type="video/mp4">
-      </video>
-      <!-- TODO: Replace with your video description -->
-      <h2 class="subtitle has-text-centered">
-        Provide an image and an optional text prompt as input. The model generates the corresponding response in the output panel.
-      </h2>
+      <!-- TODO: Replace with your teaser videos -->
+      <div class="columns is-centered">
+        <!-- First video -->
+        <div class="column is-half">
+          <video poster="" id="tree" autoplay controls muted loop height="100%" preload="metadata">
+            <!-- TODO: Add your first video file path here -->
+            <source src="static/videos/demo.mp4" type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            Provide an image and an optional text prompt as input. The model generates the corresponding response in the output panel.
+          </h2>
+        </div>
+
+        <!-- Second video (UniRM specific) -->
+        <div class="column is-half">
+          <video poster="" id="unirm-video" autoplay controls muted loop height="100%" preload="metadata">
+            <!-- Path to unirm.mp4 -->
+            <source src="static/videos/unirm.mp4" type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            This video demonstrates the UniRM model.
+          </h2>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 <!-- End teaser video -->
+
 
 
     <!-- Paper abstract -->
